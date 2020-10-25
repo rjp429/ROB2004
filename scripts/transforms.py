@@ -59,7 +59,7 @@ def adjoint(T):
     ad = np.zeros([6,6])
     ad[0:3,0:3] = T[0:3,0:3]
     ad[3:6,3:6] = T[0:3,0:3]
-    ad[0:3,3:6] = to_skew(T[0:3,3]).dot(T[0:3,0:3])
+    ad[3:6,0:3] = to_skew(T[0:3,3]).dot(T[0:3,0:3])
     return ad
 
     
